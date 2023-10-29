@@ -2,6 +2,7 @@
 using dotnet_mvc.Entidades;
 using dotnet_mvc.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_mvc.Controllers
 {
@@ -21,11 +22,11 @@ namespace dotnet_mvc.Controllers
         }
         
         [HttpGet(Name = "GetCliente")]
-        public Cliente Get()
+        public List<Cliente> Get()
         {
             List<Cliente> listClientes = _context.Clientes.ToList();
-            
-            return clienteModel.getCliente();
+            List<NestedTest> nestedTests = _context.NestedTest.ToList();
+            return listClientes;
                 
         }
 

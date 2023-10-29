@@ -14,6 +14,9 @@ namespace dotnet_mvc.Data
         {
            
         }
+
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
+
+        public virtual DbSet<NestedTest> NestedTest { get; set; } = null!;
     }
 }
